@@ -1,0 +1,156 @@
+/* RESET & BASIC SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #66CDAA; /* MediumAquamarine/Cyan color from image */
+    font-family: "Georgia", serif; /* Matches the serif style */
+    overflow: hidden; /* Prevents scrolling */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* PAGE LOGIC - Hide all pages by default, show only active */
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* TYPOGRAPHY */
+.main-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #66CDAA;
+}
+
+.sub-title, .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: "Cooper Black", "Georgia", serif; /* Attempts to match the chunky header font */
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+/* LAYOUTS */
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+/* Specific Layout for Page 1 (About Me) */
+.about-layout {
+    flex-direction: row;
+}
+
+.about-layout .image-box img {
+    width: 250px;
+    height: 320px;
+    object-fit: cover;
+    border: 2px solid white; /* Slight border seen in some images */
+}
+
+.about-layout .text-box {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Grid Layouts for other pages */
+.grid-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.grid-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+}
+
+/* IMAGE STYLES */
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* Keeps logos whole */
+    background-color: white; /* For logos with transparent backgrounds */
+}
+
+/* Specific tweaks for portrait photos in Family/Achievements */
+.portrait-img {
+    height: 300px !important;
+    width: 220px !important;
+    object-fit: cover !important;
+    background-color: transparent !important;
+}
+
+.landscape-img {
+    height: 250px !important;
+    width: 280px !important;
+    object-fit: cover !important;
+    background-color: transparent !important;
+}
+
+/* BUTTONS */
+.nav-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+
+button {
+    background-color: #FCED70; /* Yellow button color */
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    padding: 10px 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: blue; /* Link color blue */
+    text-decoration: underline; /* Underline text */
+    font-family: sans-serif; /* Buttons usually have simple fonts */
+}
+
+button:hover {
+    opacity: 0.9;
+}

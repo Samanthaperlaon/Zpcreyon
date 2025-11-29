@@ -153,4 +153,32 @@ button {
 
 button:hover {
     opacity: 0.9;
+
+}body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: #a8ffe0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Landscape container */
+.landscape-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Individual section */
+.section {
+    text-align: center;
+    width: 300px; /* adjust as needed */
+}
+
+.section img {
+    width: 100%;
+    border-radius: 10px;
 }

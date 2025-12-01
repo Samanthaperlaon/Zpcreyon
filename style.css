@@ -1,184 +1,503 @@
 /* RESET & BASIC SETUP */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 body {
+
     background-color: black;
+
     color: #66CDAA; /* MediumAquamarine/Cyan color from image */
+
     font-family: "Georgia", serif; /* Matches the serif style */
+
     overflow: hidden; /* Prevents scrolling */
+
     height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     font-weight: bold;
+
     font-style: italic;
+
 }
+
+
 
 /* PAGE LOGIC - Hide all pages by default, show only active */
+
 .page {
+
     display: none;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     width: 100%;
+
     height: 100%;
+
     padding: 20px;
+
     text-align: center;
+
 }
+
+
 
 .page.active {
+
     display: flex;
+
 }
+
+
 
 /* TYPOGRAPHY */
+
 .main-title {
+
     font-size: 3rem;
+
     margin-bottom: 10px;
+
     color: #66CDAA;
+
 }
+
+
 
 .sub-title, .section-title {
+
     font-size: 2.5rem;
+
     margin-bottom: 30px;
+
     font-family: "Cooper Black", "Georgia", serif; /* Attempts to match the chunky header font */
+
 }
+
+
 
 p {
+
     margin-bottom: 15px;
+
     font-size: 1.1rem;
+
     line-height: 1.4;
+
 }
+
+
 
 h3 {
+
     margin-top: 10px;
+
     margin-bottom: 5px;
+
     font-size: 1.3rem;
+
 }
+
+
 
 /* LAYOUTS */
+
 .content-container {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     gap: 20px;
+
     width: 90%;
+
     max-width: 1200px;
+
     margin-bottom: 30px;
+
 }
+
+
 
 /* Specific Layout for Page 1 (About Me) */
+
 .about-layout {
+
     flex-direction: row;
+
 }
+
+
 
 .about-layout .image-box img {
+
     width: 250px;
+
     height: 320px;
+
     object-fit: cover;
+
     border: 2px solid white; /* Slight border seen in some images */
+
 }
+
+
 
 .about-layout .text-box {
+
     max-width: 600px;
+
     text-align: center;
+
 }
+
+
 
 /* Grid Layouts for other pages */
+
 .grid-4 {
+
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 30px;
+
 }
+
+
 
 .grid-3 {
+
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 50px;
+
 }
+
+
 
 .card {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     max-width: 250px;
+
 }
+
+
 
 /* IMAGE STYLES */
+
 .card img {
+
     width: 200px;
+
     height: 200px;
+
     object-fit: contain; /* Keeps logos whole */
+
     background-color: white; /* For logos with transparent backgrounds */
+
 }
+
+
 
 /* Specific tweaks for portrait photos in Family/Achievements */
+
 .portrait-img {
+
     height: 300px !important;
+
     width: 220px !important;
+
     object-fit: cover !important;
+
     background-color: transparent !important;
+
 }
+
+
 
 .landscape-img {
+
     height: 250px !important;
+
     width: 280px !important;
+
     object-fit: cover !important;
+
     background-color: transparent !important;
+
 }
+
+
 
 /* BUTTONS */
+
 .nav-buttons {
+
     margin-top: 20px;
+
     display: flex;
+
     gap: 40px;
+
 }
+
+
 
 button {
+
     background-color: #FCED70; /* Yellow button color */
+
     border: none;
+
     border-radius: 50px; /* Pill shape */
+
     padding: 10px 40px;
+
     font-size: 1rem;
+
     cursor: pointer;
+
     color: blue; /* Link color blue */
+
     text-decoration: underline; /* Underline text */
+
     font-family: sans-serif; /* Buttons usually have simple fonts */
+
 }
+
+
 
 button:hover {
+
     opacity: 0.9;
 
+
+
 }body {
+
     background-color: black;
+
     font-family: Arial, sans-serif;
+
     color: #a8ffe0;
+
     margin: 0;
+
     padding: 0;
+
 }
+
+
 
 /* Landscape container */
+
 .landscape-container {
+
     display: flex;
+
     flex-direction: row;
+
     justify-content: center;
+
     align-items: flex-start;
+
     gap: 40px;
+
     padding: 40px;
+
 }
+
+
 
 /* Individual section */
+
 .section {
+
     text-align: center;
+
     width: 300px; /* adjust as needed */
+
 }
 
+
+
 .section img {
+
     width: 100%;
+
     border-radius: 10px;
+
+}/* --- Page 5 Specific Styles (Group Photo and Names List) --- */
+
+
+
+/* --- Page 5 Specific Styles (Group Photo and Names List) --- */
+
+/* 1. Ensure the page itself allows content to be spaced (title top, list bottom) */
+#page5 {
+    background-image: url('mates.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    
+    /* CRITICAL: Allows title and list to be pushed to edges */
+    justify-content: space-between; 
+}
+
+/* 2. Style for the container that sits at the bottom */
+.bottom-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 120px; /* Fixed height for a small, readable list */
+    overflow-y: auto; /* Adds scrollbar if list is too long */
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background for readability */
+    border: 2px solid #66CDAA; /* Border to frame the list */
+    padding: 10px;
+    
+    /* CRITICAL: Pushes this container to the bottom of the flex parent (#page5) */
+    margin-top: auto; 
+    
+    border-radius: 5px;
+    margin-bottom: 20px; /* Space above navigation buttons */
+}
+
+/* 3. The main content container doesn't need to wrap the list anymore */
+.group-photo-layout {
+    /* Make this take up remaining vertical space above the list */
+    flex-grow: 1; 
+    /* The list is now outside this, so we remove its background/padding that covered the image */
+    background-color: transparent; 
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 4. Style for the entire names list area */
+.names-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; 
+    text-align: left;
+    padding-top: 0;
+}
+
+/* --- Page 5 Specific Styles (Five Column List - FINAL FIX) --- */
+
+/* 1. Page Container: Centered over the background image */
+#page5 {
+    background-image: url('mates.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white; /* Default text color for the page */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    justify-content: center; /* Centers content vertically (no moving/sticky bottom) */
+    padding: 20px;
+}
+
+/* Ensure the section titles are prominent */
+#page5 .section-title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+}
+
+/* 2. Main content wrapper (Takes up space above the list) */
+.group-photo-layout {
+    flex-grow: 1; 
+    background-color: transparent; 
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 3. List Wrapper: Dark background for contrast, non-scrolling */
+.bottom-container {
+    width: 90%;
+    max-width: 1200px; 
+    background-color: rgba(0, 0, 0, 0.75); /* Dark, semi-transparent background */
+    border: 2px solid #66CDAA; 
+    padding: 20px 10px; 
+    border-radius: 5px;
+    /* CRITICAL: No height/overflow/auto-margin for non-scrolling, non-moving */
+}
+
+/* 4. Column Container: Lines up the 5 columns */
+.names-list-container {
+    width: 100%;
+    display: flex; /* CRITICAL: Enables columns */
+    justify-content: space-between; 
+    text-align: left; 
+    color: white; /* Ensures names are white/visible */
+}
+
+/* 5. Individual Column Styling */
+.name-column {
+    flex: 1; /* Each column takes equal space */
+    padding: 0 10px;
+    min-width: 180px; 
+}
+
+/* 6. Name Text Styling (ensures full visibility) */
+.name-column p {
+    margin: 3px 0; 
+    font-size: 0.9em; 
+    line-height: 1.2;
+    /* FIX: Ensures the full name is visible (no clipping or single-line constraint) */
+    white-space: normal;
+    overflow: visible;
+}/* 3. List Wrapper: Dark background for contrast, non-scrolling */
+.bottom-container {
+    width: 90%;
+    max-width: 1200px; 
+    background-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid #66CDAA; 
+    padding: 20px 10px; 
+    border-radius: 5px;
+    
+    /* CRITICAL: ENSURE THESE ARE REMOVED OR NOT PRESENT */
+    /* REMOVE: height: XXXpx; */ 
+    /* REMOVE: overflow-y: auto; */ 
+    /* REMOVE: overflow: auto; */
 }
